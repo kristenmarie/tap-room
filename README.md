@@ -10,13 +10,13 @@ An application for a kombucha store to track their kegs.
 
 ##User Stories
 
-* Patron can see list of available items (name, flavor, price)
-* Employee can fill out form to add item to list
-* Employee can edit properties of item
-* Patron/employee can see how many pints are left
-* Employee can click on button next to a keg to decrease number of pints by 1
-* Employee can see kegs with less than 10 pints, so amount can be changed
-* Prices are color coded
+* Patron can see list of available items (name, flavor, price).
+* Employee can fill out form to add item to list.
+* Employee can edit properties of item.
+* Patron/employee can see how many pints are left.
+* Employee can click on button next to a keg to decrease number of pints by 1.
+* Employee can see kegs with less than 10 pints, so amount can be changed.
+* Prices are color coded.
 
 ## Setup/Installation Requirements
 
