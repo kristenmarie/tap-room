@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { NewKombuchaComponent } from './new-kombucha.component';
 import { KombuchaListComponent } from './kombucha-list.component';
 import { EditKombuchaComponent } from './edit-kombucha.component';
+import { EmptinessPipe } from './emptiness.pipe';
 
 @NgModule({
   imports: [ BrowserModule,
@@ -12,7 +13,8 @@ import { EditKombuchaComponent } from './edit-kombucha.component';
   declarations: [ AppComponent,
                   NewKombuchaComponent,
                   KombuchaListComponent,
-                  EditKombuchaComponent],
+                  EditKombuchaComponent,
+                  EmptinessPipe],
   bootstrap: [ AppComponent ]
 })
 
