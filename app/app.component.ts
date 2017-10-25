@@ -6,15 +6,21 @@ import { Kombucha } from './Kombucha.model';
   template: `
   <div class="container">
     <h1>Blue Mountain Kombucha</h1>
+    <kombucha-list [childKombuchaList]="masterKombuchaList" (clickSender)="editKombucha($event)"></kombucha-list>
     <new-kombucha (newKombuchaSender)="addKombucha($event)"></new-kombucha>
   </div>
   `
 })
 
 export class AppComponent {
-  masterKombuchaList: Kombucha[]; 
+  masterKombuchaList: Kombucha[] = [];
+  selectedKombucha = null;
 
-  addKumbucha(newKombuchaFromChild: Kombucha) {
+  addKombucha(newKombuchaFromChild: Kombucha) {
     this.masterKombuchaList.push(newKombuchaFromChild);
+  }
+
+  editKombucha(clickedKombucha) {
+    this.selectedKombucha = clickedKombucha;
   }
 }

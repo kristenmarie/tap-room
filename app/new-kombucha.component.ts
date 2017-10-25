@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Kombucha } from './task.model';
+import { Kombucha } from './kombucha.model';
 
 @Component({
   selector: 'new-kombucha',
@@ -24,7 +24,7 @@ import { Kombucha } from './task.model';
 export class NewKombuchaComponent {
   @Output() newKombuchaSender = new EventEmitter();
   submitForm(brand: string, price: number, flavor: string) {
-    var newKombuchaToAdd: Kombucha = new Kombucha(brand, price, flavor);
+    var newKombuchaToAdd: Kombucha = new Kombucha(brand, flavor, price);
     this.newKombuchaSender.emit(newKombuchaToAdd);
   }
 }

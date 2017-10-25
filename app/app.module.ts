@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { NewKombuchaComponent } from './new-kombucha.component';
+import { KombuchaListComponent } from './kombucha-list.component';
 
 @NgModule({
   imports: [ BrowserModule,
               FormsModule ],
   declarations: [ AppComponent,
-                  NewKombuchaComponent],
+                  NewKombuchaComponent,
+                  KombuchaListComponent],
   bootstrap: [ AppComponent ]
 })
 
