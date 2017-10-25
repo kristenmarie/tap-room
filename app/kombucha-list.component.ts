@@ -11,6 +11,7 @@ import { Kombucha } from './kombucha.model';
       <p>Price: $ {{currentKombucha.price}}</p>
       <p>Remaining Pints: {{currentKombucha.pints}}</p>
       <button (click)="editButtonHasBeenClicked(currentKombucha)">Edit!</button>
+      <button (click)="sellButtonHasBeenClicked(currentKombucha)">Sell</button>
     </li>
   `
 })
@@ -18,8 +19,13 @@ import { Kombucha } from './kombucha.model';
 export class KombuchaListComponent {
   @Input() childKombuchaList: Kombucha[];
   @Output() clickSender = new EventEmitter();
+  @Output() sellSender = new EventEmitter();
 
   editButtonHasBeenClicked(kombuchaToEdit: Kombucha) {
     this.clickSender.emit(kombuchaToEdit);
+  }
+
+  sellButtonHasBeenClicked(kombuchaToSell: Kombucha) {
+    this.sellSender.emit(kombuchaToSell);
   }
 }

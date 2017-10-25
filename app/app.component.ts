@@ -6,7 +6,7 @@ import { Kombucha } from './Kombucha.model';
   template: `
   <div class="container">
     <h1>Blue Mountain Kombucha</h1>
-    <kombucha-list [childKombuchaList]="masterKombuchaList" (clickSender)="editKombucha($event)"></kombucha-list>
+    <kombucha-list [childKombuchaList]="masterKombuchaList" (clickSender)="editKombucha($event)" (sellSender)="sellKombucha($event)"></kombucha-list>
     <edit-kombucha [childSelectedKombucha]="selectedKombucha" (doneButtonClickedSender)="finishedEditing()"></edit-kombucha>
     <new-kombucha (newKombuchaSender)="addKombucha($event)"></new-kombucha>
   </div>
@@ -27,5 +27,9 @@ export class AppComponent {
 
   finishedEditing() {
     this.selectedKombucha = null;
+  }
+
+  sellKombucha(clickedKombucha) {
+    clickedKombucha.pints -= 1;
   }
 }
