@@ -5,7 +5,9 @@ import { Kombucha } from './Kombucha.model';
   selector: 'app-root',
   template: `
   <div class="container">
-    <h1>Blue Mountain Kombucha</h1>
+    <div class="page-header">
+      <h1>{{header}}</h1>
+    </div>
     <kombucha-list [childKombuchaList]="masterKombuchaList" (clickSender)="editKombucha($event)" (sellSender)="sellKombucha($event)"></kombucha-list>
     <edit-kombucha [childSelectedKombucha]="selectedKombucha" (doneButtonClickedSender)="finishedEditing()"></edit-kombucha>
     <new-kombucha (newKombuchaSender)="addKombucha($event)"></new-kombucha>
@@ -14,6 +16,7 @@ import { Kombucha } from './Kombucha.model';
 })
 
 export class AppComponent {
+  header = '《《 Blue Mountain Kombucha 》》';
   masterKombuchaList: Kombucha[] = [];
   selectedKombucha = null;
 

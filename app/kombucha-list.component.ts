@@ -4,18 +4,18 @@ import { Kombucha } from './kombucha.model';
 @Component({
   selector: 'kombucha-list',
   template: `
-  <select (change)="onChange($event.target.value)">
+  <select (change)="onChange($event.target.value)" class="form-control form-control-lg">
     <option value="allKombuchas">All Kombuchas</option>
     <option value="lowKombuchas">Low Kombuchas</option>
   </select>
   <ul>
     <li *ngFor="let currentKombucha of childKombuchaList | emptiness:filterByEmptiness">
-      <h5>{{currentKombucha.brand}}</h5>
-      <p>{{currentKombucha.flavor}}</p>
+      <h5>Brand: {{currentKombucha.brand}}</h5>
+      <p>Flavor: {{currentKombucha.flavor}}</p>
       <p>Price: $ {{currentKombucha.price}}</p>
       <p>Remaining Pints: {{currentKombucha.pints}}</p>
-      <button (click)="editButtonHasBeenClicked(currentKombucha)">Edit!</button>
-      <button (click)="sellButtonHasBeenClicked(currentKombucha)">Sell</button>
+      <button (click)="editButtonHasBeenClicked(currentKombucha)" class="btn-large waves-effect waves-light">Edit!</button>
+      <button (click)="sellButtonHasBeenClicked(currentKombucha)" class="btn-large waves-effect waves-light">Sell</button>
     </li>
   `
 })

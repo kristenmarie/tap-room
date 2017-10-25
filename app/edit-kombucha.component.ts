@@ -8,11 +8,11 @@ import { Kombucha } from './kombucha.model';
     <div *ngIf="childSelectedKombucha">
       <h3>Edit Kombucha</h3>
       <label>Enter Brand:</label>
-      <input [(ngModel)]="childSelectedKombucha.brand">
+      <input [(ngModel)]="childSelectedKombucha.brand" class="form-control">
       <label>Enter Flavor:</label>
-      <input [(ngModel)]="childSelectedKombucha.flavor">
+      <input [(ngModel)]="childSelectedKombucha.flavor" class="form-control">
       <label>Enter Price:</label>
-      <input [(ngModel)]="childSelectedKombucha.price">
+      <input [(ngModel)]="childSelectedKombucha.price" class="form-control">
       <button (click)="doneButtonClicked()">Done</button>
     </div>
   </div>
