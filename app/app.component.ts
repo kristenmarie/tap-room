@@ -7,6 +7,7 @@ import { Kombucha } from './Kombucha.model';
   <div class="container">
     <h1>Blue Mountain Kombucha</h1>
     <kombucha-list [childKombuchaList]="masterKombuchaList" (clickSender)="editKombucha($event)"></kombucha-list>
+    <edit-kombucha [childSelectedKombucha]="selectedKombucha" (doneButtonClickedSender)="finishedEditing()"></edit-kombucha>
     <new-kombucha (newKombuchaSender)="addKombucha($event)"></new-kombucha>
   </div>
   `
@@ -22,5 +23,9 @@ export class AppComponent {
 
   editKombucha(clickedKombucha) {
     this.selectedKombucha = clickedKombucha;
+  }
+
+  finishedEditing() {
+    this.selectedKombucha = null;
   }
 }
