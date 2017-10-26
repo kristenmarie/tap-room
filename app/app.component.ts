@@ -13,7 +13,7 @@ import { Kombucha } from './Kombucha.model';
         <button class="btn-large" (click)="newButtonClicked()">Add New</button>
       </div>
       <div class="col s9">
-        <kombucha-list [childKombuchaList]="masterKombuchaList" (clickSender)="editKombucha($event)" (sellSender)="sellKombucha($event)"></kombucha-list>
+        <kombucha-list [childKombuchaList]="masterKombuchaList" (clickSender)="editKombucha($event)" (sellSender)="sellKombucha($event)" (sellGrowlersSender)="sellKombuchaGrowlers($event)"></kombucha-list>
         <edit-kombucha [childSelectedKombucha]="selectedKombucha" (doneButtonClickedSender)="finishedEditing()"></edit-kombucha>
         <div *ngIf='addNewKombucha'>
           <new-kombucha (newKombuchaSender)="addKombucha($event)" (newButtonClickedSender)="finishedAdding()"></new-kombucha>
@@ -56,5 +56,9 @@ export class AppComponent {
 
   finishedAdding() {
     this.addNewKombucha = false;
+  }
+
+  sellKombuchaGrowlers(clickedKombucha) {
+    clickedKombucha.pints -= 2;
   }
 }

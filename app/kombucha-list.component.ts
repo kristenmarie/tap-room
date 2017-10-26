@@ -16,7 +16,8 @@ import { Kombucha } from './kombucha.model';
               <th>Price</th>
               <th>Pints Left</th>
               <th></th>
-              <th></th>
+              <th>Pints</th>
+              <th>Growlers</th>
           </tr>
         </thead>
         <tbody>
@@ -27,6 +28,7 @@ import { Kombucha } from './kombucha.model';
             <td>Remaining Pints: {{currentKombucha.pints}}</td>
             <td><button (click)="editButtonHasBeenClicked(currentKombucha)" class="btn waves-effect waves-light">Edit!</button></td>
             <td><button (click)="sellButtonHasBeenClicked(currentKombucha)" class="btn waves-effect waves-light">Sell</button></td>
+            <td><button (click)="sellGrowlerButtonHasBeenClicked(currentKombucha)" class="btn waves-effect waves-light">Sell</button></td>
           </tr>
         </tbody>
       </table>
@@ -37,6 +39,7 @@ export class KombuchaListComponent {
   @Input() childKombuchaList: Kombucha[];
   @Output() clickSender = new EventEmitter();
   @Output() sellSender = new EventEmitter();
+  @Output() sellGrowlersSender = new EventEmitter();
 
   filterByEmptiness: string = "allKombuchas";
 
@@ -50,5 +53,9 @@ export class KombuchaListComponent {
 
   onChange(optionFromMenu) {
     this.filterByEmptiness = optionFromMenu;
+  }
+
+  sellGrowlerButtonHasBeenClicked(kombuchaToSell: Kombucha) {
+    this.sellGrowlersSender.emit(kombuchaToSell);
   }
 }
