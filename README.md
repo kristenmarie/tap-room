@@ -2,6 +2,8 @@
 
 #### An application for tracking Kombucha kegs, 10.25.2017
 
+![image](https://user-images.githubusercontent.com/15882954/32069706-cd855084-ba3e-11e7-9049-29254f9bf301.jpg)
+
 #### By Kristen Marie Kulha and Safiy Cham
 
 ## Description
