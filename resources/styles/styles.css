@@ -30,3 +30,7 @@ input.form-control {
 .page-header {
   text-align: center;
 }
+
+div.card-panel {
+  min-width: 818px;
+}

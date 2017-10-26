@@ -14,7 +14,7 @@ import { Kombucha } from './Kombucha.model';
         <button class="btn-large" (click)="happyHourClicked()">Happy</button>
       </div>
       <div class="col s9">
-        <kombucha-list [childKombuchaList]="masterKombuchaList" (clickSender)="editKombucha($event)" (sellSender)="sellKombucha($event)" (sellGrowlersSender)="sellKombuchaGrowlers($event)"></kombucha-list>
+        <kombucha-list [childKombuchaList]="masterKombuchaList" (clickSender)="editKombucha($event)" (sellSender)="sellKombucha($event)" (sellGrowlersSender)="sellKombuchaGrowlers($event)" (deleteSender)="deleteKombucha($event)"></kombucha-list>
         <edit-kombucha [childSelectedKombucha]="selectedKombucha" (doneButtonClickedSender)="finishedEditing()"></edit-kombucha>
         <div *ngIf='addNewKombucha'>
           <new-kombucha (newKombuchaSender)="addKombucha($event)" (newButtonClickedSender)="finishedAdding()"></new-kombucha>
@@ -67,5 +67,10 @@ export class AppComponent {
     for(let i = 0; i < this.masterKombuchaList.length; i++) {
       this.masterKombuchaList[i].price -= 2;
     }
+  }
+
+  deleteKombucha(clickedKombucha) {
+    let index = this.masterKombuchaList.indexOf(clickedKombucha);
+    this.masterKombuchaList.splice(index, 1);
   }
 }
