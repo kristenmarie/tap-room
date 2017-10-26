@@ -17,14 +17,19 @@ import { Kombucha } from './kombucha.model';
     <label>Enter Kombucha Flavor:</label>
     <input #newFlavor class="form-control">
   </div>
-  <button class="btn-large waves-effect waves-light" (click)="submitForm(newBrand.value, newPrice.value, newFlavor.value); newBrand.value=''; newPrice.value=''; newFlavor.value='';">Add</button>
+  <button class="btn-large waves-effect waves-light" (click)="submitForm(newBrand.value, newPrice.value, newFlavor.value); newBrand.value=''; newPrice.value=''; newFlavor.value=''; newButtonClicked()">Add</button>
   `
 })
 
 export class NewKombuchaComponent {
   @Output() newKombuchaSender = new EventEmitter();
+  @Output() newButtonClickedSender = new EventEmitter();
   submitForm(brand: string, price: number, flavor: string) {
     var newKombuchaToAdd: Kombucha = new Kombucha(brand, flavor, price);
     this.newKombuchaSender.emit(newKombuchaToAdd);
+  }
+
+  newButtonClicked() {
+    this.newButtonClickedSender.emit();
   }
 }

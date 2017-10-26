@@ -10,12 +10,14 @@ import { Kombucha } from './Kombucha.model';
     </div>
     <div class="row">
       <div class="col s3">
-        <button class="btn-large">Add New</button>
+        <button class="btn-large" (click)="newButtonClicked()">Add New</button>
       </div>
       <div class="col s9">
         <kombucha-list [childKombuchaList]="masterKombuchaList" (clickSender)="editKombucha($event)" (sellSender)="sellKombucha($event)"></kombucha-list>
         <edit-kombucha [childSelectedKombucha]="selectedKombucha" (doneButtonClickedSender)="finishedEditing()"></edit-kombucha>
-        <new-kombucha (newKombuchaSender)="addKombucha($event)"></new-kombucha>
+        <div *ngIf='addNewKombucha'>
+          <new-kombucha (newKombuchaSender)="addKombucha($event)" (newButtonClickedSender)="finishedAdding()"></new-kombucha>
+        </div>
       </div>
     </div>
   </div>
@@ -30,6 +32,7 @@ export class AppComponent {
     new Kombucha('Health-Ade', 'Cayenne Cleanse', 5)
   ];
   selectedKombucha = null;
+  addNewKombucha = false;
 
   addKombucha(newKombuchaFromChild: Kombucha) {
     this.masterKombuchaList.push(newKombuchaFromChild);
@@ -45,5 +48,13 @@ export class AppComponent {
 
   sellKombucha(clickedKombucha) {
     clickedKombucha.pints -= 1;
+  }
+
+  newButtonClicked() {
+    this.addNewKombucha = true;
+  }
+
+  finishedAdding() {
+    this.addNewKombucha = false;
   }
 }
