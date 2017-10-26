@@ -10,8 +10,8 @@ import { Kombucha } from './Kombucha.model';
     </div>
     <div class="row">
       <div class="col s3">
-        <button class="btn-large" (click)="newButtonClicked()">Add New</button>
-        <button class="btn-large" (click)="happyHourClicked()">Happy</button>
+        <button class="btn-large side-bar" (click)="newButtonClicked()">Add New</button>
+        <button class="btn-large side-bar" (click)="happyHourClicked()">Happy </button>
       </div>
       <div class="col s9">
         <kombucha-list [childKombuchaList]="masterKombuchaList" (clickSender)="editKombucha($event)" (sellSender)="sellKombucha($event)" (sellGrowlersSender)="sellKombuchaGrowlers($event)" (deleteSender)="deleteKombucha($event)"></kombucha-list>

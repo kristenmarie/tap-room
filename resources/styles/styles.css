@@ -21,6 +21,10 @@ h3 {
   font-size: 20px;
 }
 
+.btn {
+  font-size: 20px;
+}
+
 
 input.form-control {
   font-size: 20px;
@@ -33,4 +37,30 @@ input.form-control {
 
 div.card-panel {
   min-width: 818px;
+}
+
+.side-bar {
+  margin-bottom: 1rem;
+  width: 135px;
+}
+
+.s3 {
+  text-align: center;
+}
+
+#double-beer {
+  font-size: 25px;
+  padding-top: 4px;
+}
+
+#single-beer {
+  padding-top: 3px;
+}
+
+#delete {
+  padding-bottom: 4px;
+}
+
+#edit {
+  padding-top: 3px;
 }

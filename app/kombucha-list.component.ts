@@ -4,6 +4,7 @@ import { Kombucha } from './kombucha.model';
 @Component({
   selector: 'kombucha-list',
   template: `
+  <h3>Thirsty? Here's the List:</h3>
   <div class="card-panel">
     <select (change)="onChange($event.target.value)" class="form-control form-control-lg">
       <option value="allKombuchas">All Kombuchas</option>
@@ -30,10 +31,10 @@ import { Kombucha } from './kombucha.model';
           <td>Flavor: {{currentKombucha.flavor}}</td>
           <td>Price: $ {{currentKombucha.price}}</td>
           <td>Remaining Pints: {{currentKombucha.pints}}</td>
-          <td><button (click)="editButtonHasBeenClicked(currentKombucha)" class="btn waves-effect waves-light">Edit!</button></td>
-          <td><button (click)="sellButtonHasBeenClicked(currentKombucha)" class="btn waves-effect waves-light">Sell</button></td>
-          <td><button (click)="sellGrowlerButtonHasBeenClicked(currentKombucha)" class="btn waves-effect waves-light">Sell</button></td>
-          <td><button (click)="deleteButtonHasBeenClicked(currentKombucha)" class="btn red">Delete</button></td>
+          <td><button (click)="editButtonHasBeenClicked(currentKombucha)" class="btn waves-effect waves-light" id="edit">✏️</button></td>
+          <td><button (click)="sellButtonHasBeenClicked(currentKombucha)" class="btn waves-effect waves-light" id="single-beer">🍺</button></td>
+          <td><button (click)="sellGrowlerButtonHasBeenClicked(currentKombucha)" class="btn waves-effect waves-light" id="double-beer">🍻</button></td>
+          <td><button (click)="deleteButtonHasBeenClicked(currentKombucha)" class="btn red"><img id="delete" src='resources/images/delete.png'></button></td>
         </tr>
       </tbody>
     </table>
