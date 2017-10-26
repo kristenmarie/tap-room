@@ -16,6 +16,20 @@ export class EmptinessPipe implements PipeTransform {
         }
       }
       return output;
+    } else if (desiredEmptiness === 'barginKombuchas') {
+      for (let i = 0; i < input.length; i++) {
+        if (input[i].price < 5) {
+          output.push(input[i]);
+        }
+      }
+      return output;
+    } else if (desiredEmptiness === "specialtyKombuchas") {
+      for (let i = 0; i < input.length; i++) {
+        if (input[i].price >= 5) {
+          output.push(input[i]);
+        }
+      }
+      return output;
     } else {
       return input;
     }

@@ -7,6 +7,8 @@ import { Kombucha } from './kombucha.model';
   <select (change)="onChange($event.target.value)" class="form-control form-control-lg">
     <option value="allKombuchas">All Kombuchas</option>
     <option value="lowKombuchas">Low Kombuchas</option>
+    <option value="barginKombuchas">Bargin Kombuchas</option>
+    <option value="specialtyKombuchas">Specialty Kombuchas</option>
   </select>
       <table class="striped">
         <thead>
