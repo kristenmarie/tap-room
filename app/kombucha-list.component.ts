@@ -8,15 +8,28 @@ import { Kombucha } from './kombucha.model';
     <option value="allKombuchas">All Kombuchas</option>
     <option value="lowKombuchas">Low Kombuchas</option>
   </select>
-  <ul>
-    <li *ngFor="let currentKombucha of childKombuchaList | emptiness:filterByEmptiness">
-      <h5>Brand: {{currentKombucha.brand}}</h5>
-      <p>Flavor: {{currentKombucha.flavor}}</p>
-      <p>Price: $ {{currentKombucha.price}}</p>
-      <p>Remaining Pints: {{currentKombucha.pints}}</p>
-      <button (click)="editButtonHasBeenClicked(currentKombucha)" class="btn-large waves-effect waves-light">Edit!</button>
-      <button (click)="sellButtonHasBeenClicked(currentKombucha)" class="btn-large waves-effect waves-light">Sell</button>
-    </li>
+      <table class="striped">
+        <thead>
+          <tr>
+              <th>Brand</th>
+              <th>Flavor</th>
+              <th>Price</th>
+              <th>Pints Left</th>
+              <th></th>
+              <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let currentKombucha of childKombuchaList | emptiness:filterByEmptiness">
+            <td>Brand: {{currentKombucha.brand}}</td>
+            <td>Flavor: {{currentKombucha.flavor}}</td>
+            <td>Price: $ {{currentKombucha.price}}</td>
+            <td>Remaining Pints: {{currentKombucha.pints}}</td>
+            <td><button (click)="editButtonHasBeenClicked(currentKombucha)" class="btn waves-effect waves-light">Edit!</button></td>
+            <td><button (click)="sellButtonHasBeenClicked(currentKombucha)" class="btn waves-effect waves-light">Sell</button></td>
+          </tr>
+        </tbody>
+      </table>
   `
 })
 
